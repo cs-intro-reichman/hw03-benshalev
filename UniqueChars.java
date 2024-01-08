@@ -13,8 +13,8 @@ public class UniqueChars {
      */
     public static String uniqueChars(String s) {
         // Replace the following statement with your code
-        String ans = "" + (char)(s.charAt(0));
-        int i = 1;
+        String ans = "";
+        int i = 0;
         while (i < s.length()){
              if (ans.indexOf((char)(s.charAt(i))) == -1 || s.charAt(i)== ' '){
                 
