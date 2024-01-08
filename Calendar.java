@@ -42,8 +42,9 @@ public class  Calendar {
 		dayOfWeek ++;
 		dayOfMonth ++;
 		if(dayOfWeek == 8){
-			dayOfWeek = 1 ; 
-		if ((dayOfMonth % nDaysInMonth(month, year)) == 0){
+			dayOfWeek = 1 ;
+        } 
+		if ((dayOfMonth == nDaysInMonth(month, year))){
 			month ++;
 			if (month == 13){
 				dayOfMonth = 1;
@@ -54,12 +55,10 @@ public class  Calendar {
 				System.out.println(" sunday");
                 countsunday ++;
 				}
-				else{
-					System.err.println();
+				else{ System.err.println();
 				}
 
 			}
-		}
 	}
 		// Replace this comment with your code
 	 } 
