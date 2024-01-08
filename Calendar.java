@@ -28,21 +28,22 @@ public class  Calendar {
 			while (year <= speyear){
 				if(year == speyear){
 					if(dayOfMonth == 1){
-						 countsunday ++;
-					}
-					System.out.println(dayOfWeek + "/" + dayOfMonth + "/" + year + "sunday");
-					}
-					else{
+						if(dayOfWeek == 1){
+							if(dayOfMonth == 1){
+						 		countsunday ++;
+							}
+							System.out.println(dayOfWeek + "/" + dayOfMonth + "/" + year + "sunday");
+						}else{
 						 System.out.println(dayOfWeek + "/" + dayOfMonth + "/" + year);
+						}
 					}
-				debugDaysCounter ++;
-				advance();
-	 		
-			}
-            System.out.println("During the 20th century, " +  countsunday  + " Sundays fell on the first day of the month" );
-	 		//// If you want to stop the loop after n days, replace the condition of the
+					debugDaysCounter ++;
+					advance();
+				}
+	 			 		//// If you want to stop the loop after n days, replace the condition of the
 	 		//// if statement with the condition (debugDaysCounter == n)
         }
+	}
 
 	 	//// Write the necessary ending code here
 	
