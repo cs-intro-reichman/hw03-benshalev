@@ -31,7 +31,7 @@ public class  Calendar {
 							if(dayOfMonth == 1){
 						 		countsunday ++;
 							}
-							System.out.println(dayOfMonth + "/" + month + "/" + year + " sunday");
+							System.out.println(dayOfMonth + "/" + month + "/" + year + " Sunday");
 						}else{
 						 System.out.println(dayOfMonth + "/" + month + "/" + year);
 						}
