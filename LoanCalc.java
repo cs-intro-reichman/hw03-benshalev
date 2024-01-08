@@ -20,13 +20,13 @@ public class LoanCalc {
 		
 		// Computes the periodical payment using brute force search
 		System.out.print("Periodical payment, using brute force: ");
-		System.out.printf("%.2f", bruteForceSolver(loan, rate, n, epsilon));
+		System.out.printf("%.2f", bruteForceSolver(loan, rate, n, epsilon)  );
 		System.out.println();
 		System.out.println("number of iterations: " + iterationCounter);
 
 		// Computes the periodical payment using bisection search
 		System.out.print("Periodical payment, using bi-section search: ");
-		System.out.printf("%.2f", bisectionSolver(loan, rate, n, epsilon));
+		System.out.printf("%.2f", bisectionSolver(loan, rate, n, epsilon) );
 		System.out.println();
 		System.out.println("number of iterations: " + iterationCounter);
 	}
@@ -40,7 +40,12 @@ public class LoanCalc {
 	// Side effect: modifies the class variable iterationCounter.
     public static double bruteForceSolver(double loan, double rate, int n, double epsilon) {  
     	// Replace the following statement with your code
-    	return 0;
+		double g = loan/ n;
+		while( endBalance(loan, rate, n, g) >= epsilon){
+			g += epsilon;
+			iterationCounter++;
+		}
+		return g;
     }
     
     /**
@@ -50,10 +55,27 @@ public class LoanCalc {
 	* the number of periods (n), and epsilon, a tolerance level.
 	*/
 	// Side effect: modifies the class variable iterationCounter.
-    public static double bisectionSolver(double loan, double rate, int n, double epsilon) {  
-    	// Replace the following statement with your code
-    	return 0;
+    public static double bisectionSolver(double loan, double rate, int n, double epsilon) { 
+		double lo = epsilon;
+		double hi = loan;
+		double g = (hi + lo) / 2;
+		while((hi - lo) > epsilon){
+			if((endBalance(loan, rate, n, g) * endBalance(loan, rate, n, lo)) > 0 ){
+				lo = g;
+			}
+			else{
+				hi = g;
+			}		
+			g = (hi + lo) / 2;
+			iterationCounter++;
+		}
+		return g;
     }
+
+ 
+    	// Replace the following statement with your code
+    
+    
 	
 	/**
 	* Computes the ending balance of a loan, given the sum of the loan, the periodical
@@ -61,6 +83,11 @@ public class LoanCalc {
 	*/
 	private static double endBalance(double loan, double rate, int n, double payment) {
 		// Replace the following statement with your code
-    	return 0;
+		Double endingBalance = loan;
+		while (n > 0 ){
+			endingBalance = ((endingBalance - payment) * (1+ rate/100));
+			n = n-1;
+		}
+    	return endingBalance;
 	}
 }
