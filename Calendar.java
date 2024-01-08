@@ -28,7 +28,6 @@ public class  Calendar {
 			while (year <= speyear){
 				if(year == speyear){
 					if(dayOfMonth == 1){
-						if(dayOfWeek == 1){
 							if(dayOfMonth == 1){
 						 		countsunday ++;
 							}
@@ -42,7 +41,6 @@ public class  Calendar {
 				}
 	 			 		//// If you want to stop the loop after n days, replace the condition of the
 	 		//// if statement with the condition (debugDaysCounter == n)
-        }
 	}
 
 	 	//// Write the necessary ending code here
