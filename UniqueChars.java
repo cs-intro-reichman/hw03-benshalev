@@ -2,6 +2,7 @@
 public class UniqueChars {
     public static void main(String[] args) {  
         String str = args[0];
+        System.out.println(str.length());
         System.out.println(uniqueChars(str));
     }
 
@@ -12,6 +13,18 @@ public class UniqueChars {
      */
     public static String uniqueChars(String s) {
         // Replace the following statement with your code
-        return null;
+        String ans = "" + (char)(s.charAt(0));
+        int i = 1;
+        while (i < s.length()){
+             if (ans.indexOf((char)(s.charAt(i))) == -1 || s.charAt(i)== ' '){
+                
+                ans = ans + (char)(s.charAt(i));
+                
+            } 
+                i++;
+           } 
+            
+            return ans;
+        }
+       
     }
-}
