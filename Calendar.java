@@ -27,7 +27,7 @@ public class  Calendar {
  		
 			while (year <= speyear){
 				if(year == speyear){
-					if(dayOfMonth == 1){
+					if(dayOfWeek == 1){
 							if(dayOfMonth == 1){
 						 		countsunday ++;
 							}
