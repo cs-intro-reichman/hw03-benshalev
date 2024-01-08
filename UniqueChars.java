@@ -16,7 +16,8 @@ public class UniqueChars {
         String ans = "";
         int i = 0;
         while (i < s.length()){
-             if (ans.indexOf((char)(s.charAt(i))) == -1 || s.charAt(i)== ' '){
+            char ch = s.charAt(i);
+             if (ans.indexOf(ch) == -1 || s.charAt(i)== ' '){
                 
                 ans = ans + (char)(s.charAt(i));
                 
